@@ -3,7 +3,7 @@ from locust import HttpLocust, TaskSet, task
 class ElbTasks(TaskSet):
   @task
   def status(self):
-      self.client.get("/status")
+      self.client.get("/log")
 
 class ElbWarmer(HttpLocust):
   task_set = ElbTasks
